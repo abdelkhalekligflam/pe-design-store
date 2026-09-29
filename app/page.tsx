@@ -124,12 +124,14 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <div className="flex rounded-full border border-slate-200 bg-slate-50 p-1 text-xs font-semibold">
               <button
+                type="button"
                 onClick={() => setLang("en")}
                 className={`rounded-full px-3 py-1.5 transition ${lang === "en" ? "bg-white text-violet-700 shadow-sm" : "text-slate-500"}`}
               >
                 EN
               </button>
               <button
+                type="button"
                 onClick={() => setLang("fr")}
                 className={`rounded-full px-3 py-1.5 transition ${lang === "fr" ? "bg-white text-violet-700 shadow-sm" : "text-slate-500"}`}
               >
@@ -351,19 +353,19 @@ export default function Home() {
       <section className="mx-auto max-w-7xl px-5 pb-4 pt-20 lg:px-8">
         <div className="grid gap-4 md:grid-cols-3">
           <div className="rounded-3xl border border-slate-200 bg-white p-6">
-            <p className="text-sm font-black text-violet-700">01 · CHECKOUT</p>
-            <p className="mt-2 font-bold">Pay securely with PayPal</p>
-            <p className="mt-2 text-sm leading-6 text-slate-500">Your order is processed only after successful payment confirmation.</p>
+            <p className="text-sm font-black text-violet-700">01 · {lang === "en" ? "CHECKOUT" : "PAIEMENT"}</p>
+            <p className="mt-2 font-bold">{lang === "en" ? "Pay securely with PayPal" : "Payez en toute sécurité avec PayPal"}</p>
+            <p className="mt-2 text-sm leading-6 text-slate-500">{lang === "en" ? "Your order is processed only after successful payment confirmation." : "Votre commande est traitée uniquement après confirmation du paiement."}</p>
           </div>
           <div className="rounded-3xl border border-slate-200 bg-white p-6">
-            <p className="text-sm font-black text-fuchsia-600">02 · DELIVERY</p>
-            <p className="mt-2 font-bold">Instructions arrive by email</p>
-            <p className="mt-2 text-sm leading-6 text-slate-500">You receive the digital delivery guide at the email used for your order.</p>
+            <p className="text-sm font-black text-fuchsia-600">02 · {lang === "en" ? "DELIVERY" : "LIVRAISON"}</p>
+            <p className="mt-2 font-bold">{lang === "en" ? "Instructions arrive by email" : "Les instructions arrivent par e-mail"}</p>
+            <p className="mt-2 text-sm leading-6 text-slate-500">{lang === "en" ? "You receive the digital delivery guide at the email used for your order." : "Vous recevez le guide numérique à l’adresse e-mail utilisée pour votre commande."}</p>
           </div>
           <div className="rounded-3xl border border-slate-200 bg-white p-6">
             <p className="text-sm font-black text-sky-600">03 · ACTIVATION</p>
-            <p className="mt-2 font-bold">Reply with your Hardware ID</p>
-            <p className="mt-2 text-sm leading-6 text-slate-500">Reply to the delivery email and your licensed activation is returned by email.</p>
+            <p className="mt-2 font-bold">{lang === "en" ? "Reply with your Hardware ID" : "Répondez avec votre Hardware ID"}</p>
+            <p className="mt-2 text-sm leading-6 text-slate-500">{lang === "en" ? "Reply to the delivery email and your licensed activation is returned by email." : "Répondez à l’e-mail de livraison et votre activation sous licence vous sera renvoyée par e-mail."}</p>
           </div>
         </div>
       </section>
