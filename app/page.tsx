@@ -389,11 +389,14 @@ export default function Home() {
       </section>
 
       <footer className="border-t border-slate-200 bg-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between lg:px-8">
-          <p>© 2026 PE-DESIGN Store</p>
-          <p className="max-w-2xl sm:text-right"><span>{t.disclaimer}</span></p>
+        <div className="mx-auto grid max-w-7xl gap-4 px-5 py-8 text-sm text-slate-500 md:grid-cols-[auto_1fr_auto] md:items-center lg:px-8">
+          <p className="font-semibold">© 2026 PE-DESIGN Store</p>
+          <p className="max-w-2xl md:justify-self-center md:text-center">{t.disclaimer}</p>
+          <Link href="/policies" className="font-semibold text-slate-600 transition hover:text-violet-700">
+            {lang === "en" ? "Terms · Privacy · Refunds" : "Conditions · Confidentialité · Remboursements"}
+          </Link>
         </div>
-      <Link href="/policies" className="shrink-0 font-semibold text-slate-600 transition hover:text-violet-700">{lang === "en" ? "Terms · Privacy · Refunds" : "Conditions · Confidentialité · Remboursements"}</Link></footer>
+      </footer>
     </main>
   );
 }
