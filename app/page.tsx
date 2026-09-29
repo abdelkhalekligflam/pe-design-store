@@ -181,7 +181,7 @@ export default function Home() {
               </div>
               <div className="relative mx-auto aspect-square max-w-[470px] overflow-hidden rounded-3xl bg-white">
                 <img
-                  src="https://sewingcraft.brother.eu/-/media/product-images/supplies/sewing-and-craft/pe-design/pe-design-11/ped11_main.ashx"
+                  src="/images/pe-design-11-box.png"
                   alt="PE-DESIGN 11 embroidery software"
                   className="h-full w-full object-contain p-3"
                 />
@@ -241,7 +241,35 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="how" className="border-b border-slate-200 bg-white">
+      <section className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
+        <div className="grid items-center gap-12 rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm md:p-10 lg:grid-cols-2 lg:p-14">
+          <div className="relative mx-auto w-full max-w-md">
+            <div className="absolute inset-8 rounded-full bg-gradient-to-br from-sky-100 via-violet-100 to-fuchsia-100 blur-2xl" />
+            <img
+              src="/images/pe-design-11-upgrade.png"
+              alt="PE-DESIGN 11 software package"
+              className="relative mx-auto max-h-[480px] w-full object-contain drop-shadow-xl"
+            />
+          </div>
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#00539b]">Creative freedom</p>
+            <h2 className="mt-3 text-4xl font-black tracking-[-0.04em] sm:text-5xl">From inspiration to stitch-ready design</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Create original embroidery, personalize lettering, convert artwork and refine stitch details in one complete design environment.
+            </p>
+            <div className="mt-8 grid gap-3 sm:grid-cols-2">
+              {["Built-in embroidery designs", "Creative lettering tools", "Photo & image conversion", "Detailed stitch editing"].map((item) => (
+                <div key={item} className="flex items-center gap-3 rounded-2xl bg-slate-50 p-4 text-sm font-bold text-slate-700">
+                  <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-violet-100 text-violet-700">✓</span>
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" className="border-y border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
           <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <div>
