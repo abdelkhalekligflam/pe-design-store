@@ -169,7 +169,11 @@ export default function Home() {
                 {t.learn}
               </a>
             </div>
-            <p className="mt-5 text-sm font-medium text-slate-500">{t.trusted}</p>
+            <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-slate-500">
+              <span>✓ Digital delivery</span>
+              <span>✓ Lifetime activation</span>
+              <span>✓ Email support</span>
+            </div>
           </div>
 
           <div className="relative">
@@ -179,14 +183,14 @@ export default function Home() {
               <div className="absolute right-5 top-5 z-10 rounded-full bg-[#00539b] px-3 py-1.5 text-xs font-bold text-white shadow-sm">
                 PE-DESIGN 11
               </div>
-              <div className="relative mx-auto aspect-square max-w-[470px] overflow-hidden rounded-3xl bg-white">
+              <div className="relative mx-auto aspect-[4/3] max-w-[520px] overflow-hidden rounded-3xl bg-gradient-to-b from-slate-50 to-white">
                 <img
                   src="/images/pe-design-11-box.png"
                   alt="PE-DESIGN 11 embroidery software"
-                  className="h-full w-full object-contain p-3"
+                  className="h-full w-full object-contain p-1 sm:p-2"
                 />
               </div>
-              <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-5">
+              <div className="mt-4 flex items-center justify-between border-t border-slate-100 pt-5">
                 <div>
                   <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">Digital license</p>
                   <p className="mt-1 text-3xl font-black tracking-tight text-slate-950">$99</p>
@@ -330,7 +334,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="buy" className="px-5 py-20 lg:px-8 lg:py-28">
+      <section className="mx-auto max-w-7xl px-5 pb-4 pt-20 lg:px-8">
+        <div className="grid gap-4 md:grid-cols-3">
+          <div className="rounded-3xl border border-slate-200 bg-white p-6">
+            <p className="text-sm font-black text-violet-700">01 · CHECKOUT</p>
+            <p className="mt-2 font-bold">Pay securely with PayPal</p>
+            <p className="mt-2 text-sm leading-6 text-slate-500">Your order is processed only after successful payment confirmation.</p>
+          </div>
+          <div className="rounded-3xl border border-slate-200 bg-white p-6">
+            <p className="text-sm font-black text-fuchsia-600">02 · DELIVERY</p>
+            <p className="mt-2 font-bold">Instructions arrive by email</p>
+            <p className="mt-2 text-sm leading-6 text-slate-500">You receive the digital delivery guide at the email used for your order.</p>
+          </div>
+          <div className="rounded-3xl border border-slate-200 bg-white p-6">
+            <p className="text-sm font-black text-sky-600">03 · ACTIVATION</p>
+            <p className="mt-2 font-bold">Reply with your Hardware ID</p>
+            <p className="mt-2 text-sm leading-6 text-slate-500">Reply to the delivery email and your licensed activation is returned by email.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="buy" className="px-5 py-16 lg:px-8 lg:py-24">
         <div className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] bg-gradient-to-br from-violet-700 via-purple-700 to-fuchsia-600 p-8 text-white shadow-2xl shadow-violet-200 sm:p-12 lg:p-16">
           <div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-center">
             <div className="max-w-2xl">
@@ -340,7 +364,7 @@ export default function Home() {
             </div>
             <button
               type="button"
-              className="shrink-0 rounded-2xl bg-white px-7 py-4 text-base font-black text-violet-700 shadow-xl transition hover:-translate-y-0.5"
+              className="shrink-0 rounded-2xl bg-white px-8 py-5 text-base font-black text-violet-700 shadow-xl transition hover:-translate-y-0.5 hover:shadow-2xl"
             >
               {t.finalButton}
             </button>
