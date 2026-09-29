@@ -105,9 +105,11 @@ export default function Home() {
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
           <a href="#" className="flex items-center gap-3">
-            <div className="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-br from-[#00539b] to-[#0a7fe8] text-sm font-black text-white shadow-lg shadow-sky-200">
-              PE
-            </div>
+            <img
+              src="/icon.svg"
+              alt="PE Design Store"
+              className="h-10 w-10 rounded-xl shadow-lg shadow-sky-100"
+            />
             <div>
               <p className="text-sm font-semibold tracking-tight">PE-DESIGN 11</p>
               <p className="text-[11px] text-slate-500">Embroidery software</p>
