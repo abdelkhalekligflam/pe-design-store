@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const copy = {
   en: {
@@ -366,12 +367,12 @@ export default function Home() {
               <h2 className="mt-3 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{t.finalTitle}</h2>
               <p className="mt-5 text-lg leading-8 text-white/80">{t.finalText}</p>
             </div>
-            <button
-              type="button"
-              className="shrink-0 rounded-2xl bg-white px-8 py-5 text-base font-black text-violet-700 shadow-xl transition hover:-translate-y-0.5 hover:shadow-2xl"
+            <Link
+              href={`/checkout?lang=${lang}`}
+              className="shrink-0 rounded-2xl bg-white px-8 py-5 text-center text-base font-black text-violet-700 shadow-xl transition hover:-translate-y-0.5 hover:shadow-2xl"
             >
               {t.finalButton}
-            </button>
+            </Link>
           </div>
         </div>
       </section>
