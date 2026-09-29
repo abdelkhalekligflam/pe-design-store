@@ -380,9 +380,9 @@ export default function Home() {
       <footer className="border-t border-slate-200 bg-white">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 px-5 py-8 text-sm text-slate-500 sm:flex-row sm:items-center sm:justify-between lg:px-8">
           <p>© 2026 PE-DESIGN Store</p>
-          <p className="max-w-2xl sm:text-right">{t.disclaimer}</p>
+          <p className="max-w-2xl sm:text-right"><span>{t.disclaimer}</span></p>
         </div>
-      </footer>
+      <Link href="/policies" className="font-semibold text-slate-600 transition hover:text-violet-700">{lang === "en" ? "Terms · Privacy · Refunds" : "Conditions · Confidentialité · Remboursements"}</Link></footer>
     </main>
   );
 }
