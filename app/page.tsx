@@ -136,12 +136,12 @@ export default function Home() {
                 FR
               </button>
             </div>
-            <a
-              href="#buy"
+            <Link
+              href={`/checkout?lang=${lang}`}
               className="hidden rounded-full bg-slate-950 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-violet-700 sm:inline-flex"
             >
               $99
-            </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -161,12 +161,12 @@ export default function Home() {
             </p>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#buy"
+              <Link
+                href={`/checkout?lang=${lang}`}
                 className="inline-flex items-center justify-center rounded-2xl bg-gradient-to-r from-violet-700 to-fuchsia-600 px-6 py-4 text-base font-bold text-white shadow-xl shadow-violet-200 transition hover:-translate-y-0.5"
               >
                 {t.buy}
-              </a>
+              </Link>
               <a
                 href="#features"
                 className="inline-flex items-center justify-center rounded-2xl border border-slate-200 bg-white px-6 py-4 text-base font-bold text-slate-800 transition hover:border-violet-200 hover:text-violet-700"
