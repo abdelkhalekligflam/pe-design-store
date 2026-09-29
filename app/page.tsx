@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const copy = {
   en: {
@@ -95,6 +95,10 @@ export default function Home() {
   const [lang, setLang] = useState<"en" | "fr">("en");
   const t = copy[lang];
 
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
   return (
     <main className="min-h-screen bg-[#fbfbfd] text-slate-900">
       <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
@@ -170,9 +174,9 @@ export default function Home() {
               </a>
             </div>
             <div className="mt-5 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-slate-500">
-              <span>✓ Digital delivery</span>
-              <span>✓ Lifetime activation</span>
-              <span>✓ Email support</span>
+              <span>✓ {lang === "en" ? "Digital delivery" : "Livraison numérique"}</span>
+              <span>✓ {lang === "en" ? "Lifetime activation" : "Activation à vie"}</span>
+              <span>✓ {lang === "en" ? "Email support" : "Support par e-mail"}</span>
             </div>
           </div>
 
@@ -228,19 +232,19 @@ export default function Home() {
       <section className="border-y border-slate-200 bg-white">
         <div className="mx-auto grid max-w-7xl gap-8 px-5 py-16 md:grid-cols-3 lg:px-8">
           <div className="rounded-3xl bg-[#f5f9fd] p-7">
-            <p className="text-sm font-black text-[#00539b]">CREATE</p>
-            <h3 className="mt-2 text-2xl font-black tracking-tight">Create your own designs</h3>
-            <p className="mt-3 leading-7 text-slate-600">Build custom embroidery, lettering, stitches and reusable creative projects.</p>
+            <p className="text-sm font-black text-[#00539b]">{lang === "en" ? "CREATE" : "CRÉER"}</p>
+            <h3 className="mt-2 text-2xl font-black tracking-tight">{lang === "en" ? "Create your own designs" : "Créez vos propres motifs"}</h3>
+            <p className="mt-3 leading-7 text-slate-600">{lang === "en" ? "Build custom embroidery, lettering, stitches and reusable creative projects." : "Créez des broderies, lettrages, points et projets créatifs personnalisés."}</p>
           </div>
           <div className="rounded-3xl bg-[#fbf5fc] p-7">
-            <p className="text-sm font-black text-fuchsia-600">AUTOMATE</p>
-            <h3 className="mt-2 text-2xl font-black tracking-tight">Turn artwork into stitches</h3>
-            <p className="mt-3 leading-7 text-slate-600">PhotoStitch, Auto Punch and Cross Stitch tools help turn images into embroidery.</p>
+            <p className="text-sm font-black text-fuchsia-600">{lang === "en" ? "AUTOMATE" : "AUTOMATISER"}</p>
+            <h3 className="mt-2 text-2xl font-black tracking-tight">{lang === "en" ? "Turn artwork into stitches" : "Transformez vos images en points"}</h3>
+            <p className="mt-3 leading-7 text-slate-600">{lang === "en" ? "PhotoStitch, Auto Punch and Cross Stitch tools help turn images into embroidery." : "PhotoStitch, Auto Punch et Cross Stitch facilitent la conversion d’images en broderie."}</p>
           </div>
           <div className="rounded-3xl bg-[#f6f5ff] p-7">
-            <p className="text-sm font-black text-violet-700">WORK SMARTER</p>
-            <h3 className="mt-2 text-2xl font-black tracking-tight">Save time while creating</h3>
-            <p className="mt-3 leading-7 text-slate-600">Use built-in designs, fonts and intelligent color tools to speed up your workflow.</p>
+            <p className="text-sm font-black text-violet-700">{lang === "en" ? "WORK SMARTER" : "GAGNER DU TEMPS"}</p>
+            <h3 className="mt-2 text-2xl font-black tracking-tight">{lang === "en" ? "Save time while creating" : "Créez plus efficacement"}</h3>
+            <p className="mt-3 leading-7 text-slate-600">{lang === "en" ? "Use built-in designs, fonts and intelligent color tools to speed up your workflow." : "Utilisez les motifs, polices et outils couleur intégrés pour accélérer votre flux de travail."}</p>
           </div>
         </div>
       </section>
@@ -256,13 +260,13 @@ export default function Home() {
             />
           </div>
           <div>
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#00539b]">Creative freedom</p>
-            <h2 className="mt-3 text-4xl font-black tracking-[-0.04em] sm:text-5xl">From inspiration to stitch-ready design</h2>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#00539b]">{lang === "en" ? "Creative freedom" : "Liberté créative"}</p>
+            <h2 className="mt-3 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{lang === "en" ? "From inspiration to stitch-ready design" : "De l’inspiration au motif prêt à broder"}</h2>
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              Create original embroidery, personalize lettering, convert artwork and refine stitch details in one complete design environment.
+              {lang === "en" ? "Create original embroidery, personalize lettering, convert artwork and refine stitch details in one complete design environment." : "Créez des broderies originales, personnalisez le lettrage, convertissez vos images et affinez les détails des points dans un environnement complet."}
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-2">
-              {["Built-in embroidery designs", "Creative lettering tools", "Photo & image conversion", "Detailed stitch editing"].map((item) => (
+              {(lang === "en" ? ["Built-in embroidery designs", "Creative lettering tools", "Photo & image conversion", "Detailed stitch editing"] : ["Motifs de broderie intégrés", "Outils de lettrage créatifs", "Conversion photo et image", "Édition détaillée des points"]).map((item) => (
                 <div key={item} className="flex items-center gap-3 rounded-2xl bg-slate-50 p-4 text-sm font-bold text-slate-700">
                   <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full bg-violet-100 text-violet-700">✓</span>
                   {item}
@@ -277,11 +281,11 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
           <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-fuchsia-600">Simple delivery</p>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-fuchsia-600">{lang === "en" ? "Simple delivery" : "Livraison simple"}</p>
               <h2 className="mt-3 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{t.howTitle}</h2>
             </div>
             <p className="max-w-xl text-base leading-7 text-slate-600">
-              A clear four-step process from secure checkout to your licensed activation.
+              {lang === "en" ? "A clear four-step process from secure checkout to your licensed activation." : "Un processus clair en quatre étapes, du paiement sécurisé à votre activation sous licence."}
             </p>
           </div>
 
@@ -301,12 +305,12 @@ export default function Home() {
         <div className="overflow-hidden rounded-[2rem] bg-slate-950 text-white">
           <div className="grid gap-10 p-8 sm:p-12 lg:grid-cols-2 lg:p-16">
             <div>
-              <p className="text-sm font-bold uppercase tracking-[0.18em] text-fuchsia-300">System setup</p>
+              <p className="text-sm font-bold uppercase tracking-[0.18em] text-fuchsia-300">{lang === "en" ? "System setup" : "Configuration système"}</p>
               <h2 className="mt-3 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{t.compatibilityTitle}</h2>
               <p className="mt-5 max-w-xl text-lg leading-8 text-slate-300">{t.compatibilityText}</p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
-              {["Windows 10 / 11", "1 GHz+ processor", "1 GB+ memory", "600 MB+ free space"].map((item) => (
+              {(lang === "en" ? ["Windows 10 / 11", "1 GHz+ processor", "1 GB+ memory", "600 MB+ free space"] : ["Windows 10 / 11", "Processeur 1 GHz+", "Mémoire 1 Go+", "600 Mo+ d’espace libre"]).map((item) => (
                 <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-5">
                   <div className="mb-4 h-2 w-12 rounded-full bg-gradient-to-r from-fuchsia-500 to-sky-400" />
                   <p className="font-bold">{item}</p>
@@ -320,7 +324,7 @@ export default function Home() {
       <section id="faq" className="bg-[#f2f3f7]">
         <div className="mx-auto max-w-5xl px-5 py-20 lg:px-8 lg:py-28">
           <div className="text-center">
-            <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet-700">Support</p>
+            <p className="text-sm font-bold uppercase tracking-[0.18em] text-violet-700">{lang === "en" ? "Support" : "Assistance"}</p>
             <h2 className="mt-3 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{t.faqTitle}</h2>
           </div>
           <div className="mt-12 space-y-4">
