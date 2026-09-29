@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 const content = {
   en: {
@@ -25,11 +26,14 @@ const content = {
 } as const;
 
 export default function PoliciesPage(){
- const [lang,setLang]=useState<"en"|"fr">("en"); const t=content[lang];
+ const params=useSearchParams();
+ const initialLang=params.get("lang")==="fr"?"fr":"en";
+ const [lang,setLang]=useState<"en"|"fr">(initialLang); const t=content[lang];
+ useEffect(()=>{document.documentElement.lang=lang;},[lang]);
  return <main className="min-h-screen bg-[#f7f7fa] text-slate-950">
-  <header className="border-b border-slate-200 bg-white"><div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-5"><Link href="/" className="font-black">PE-DESIGN 11</Link><div className="flex rounded-full border border-slate-200 p-1 text-xs font-bold"><button onClick={()=>setLang("en")} className={`rounded-full px-3 py-1.5 ${lang==="en"?"bg-slate-950 text-white":""}`}>EN</button><button onClick={()=>setLang("fr")} className={`rounded-full px-3 py-1.5 ${lang==="fr"?"bg-slate-950 text-white":""}`}>FR</button></div></div></header>
+  <header className="border-b border-slate-200 bg-white"><div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-5"><Link href={`/?lang=${lang}`} className="font-black">PE-DESIGN 11</Link><div className="flex rounded-full border border-slate-200 p-1 text-xs font-bold"><button onClick={()=>setLang("en")} className={`rounded-full px-3 py-1.5 ${lang==="en"?"bg-slate-950 text-white":""}`}>EN</button><button onClick={()=>setLang("fr")} className={`rounded-full px-3 py-1.5 ${lang==="fr"?"bg-slate-950 text-white":""}`}>FR</button></div></div></header>
   <div className="mx-auto max-w-5xl px-5 py-16">
-   <Link href="/" className="text-sm font-bold text-violet-700">← {lang==="en"?"Back to store":"Retour à la boutique"}</Link>
+   <Link href={`/?lang=${lang}`} className="text-sm font-bold text-violet-700">← {lang==="en"?"Back to store":"Retour à la boutique"}</Link>
    <h1 className="mt-8 text-5xl font-black tracking-[-.05em]">{t.title}</h1><p className="mt-4 max-w-2xl text-lg leading-8 text-slate-600">{t.intro}</p>
    <div className="mt-12 grid gap-5">
     {[t.terms,t.privacy,t.refund,t.support].map(([h,b])=><section key={h} className="rounded-3xl border border-slate-200 bg-white p-7 sm:p-9"><h2 className="text-2xl font-black">{h}</h2><p className="mt-4 max-w-3xl leading-7 text-slate-600">{b}</p></section>)}
