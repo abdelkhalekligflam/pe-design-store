@@ -175,33 +175,25 @@ export default function Home() {
           <div className="relative">
             <div className="absolute -left-8 top-10 h-44 w-44 rounded-full bg-fuchsia-300/30 blur-3xl" />
             <div className="absolute -right-8 bottom-0 h-52 w-52 rounded-full bg-sky-300/30 blur-3xl" />
-            <div className="relative rounded-[2rem] border border-white/70 bg-white/80 p-5 shadow-2xl shadow-violet-200/60 backdrop-blur">
-              <div className="rounded-[1.5rem] bg-gradient-to-br from-[#7427d9] via-[#9b3ad9] to-[#f14c9a] p-8 text-white">
-                <div className="flex items-start justify-between gap-5">
-                  <div>
-                    <p className="text-sm font-semibold text-white/75">Embroidery Design Software</p>
-                    <h2 className="mt-2 text-4xl font-black tracking-tight">PE-DESIGN 11</h2>
-                  </div>
-                  <span className="rounded-full bg-white/15 px-3 py-1 text-xs font-bold">Windows</span>
+            <div className="relative rounded-[2rem] border border-slate-200 bg-white p-6 shadow-2xl shadow-violet-200/50 sm:p-9">
+              <div className="absolute right-5 top-5 z-10 rounded-full bg-[#00539b] px-3 py-1.5 text-xs font-bold text-white shadow-sm">
+                PE-DESIGN 11
+              </div>
+              <div className="relative mx-auto aspect-square max-w-[470px] overflow-hidden rounded-3xl bg-white">
+                <img
+                  src="https://sewingcraft.brother.eu/-/media/product-images/supplies/sewing-and-craft/pe-design/pe-design-11/ped11_main.ashx"
+                  alt="PE-DESIGN 11 embroidery software"
+                  className="h-full w-full object-contain p-3"
+                />
+              </div>
+              <div className="mt-5 flex items-center justify-between border-t border-slate-100 pt-5">
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-slate-400">Digital license</p>
+                  <p className="mt-1 text-3xl font-black tracking-tight text-slate-950">$99</p>
                 </div>
-
-                <div className="my-10 grid min-h-64 place-items-center rounded-3xl border border-white/20 bg-white/10 p-6 backdrop-blur">
-                  <div className="relative grid h-44 w-44 place-items-center rounded-full border-[14px] border-white/20">
-                    <div className="absolute inset-4 rounded-full border border-dashed border-white/50" />
-                    <span className="text-center text-5xl">🧵</span>
-                  </div>
-                </div>
-
-                <div className="flex items-end justify-between">
-                  <div>
-                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-white/65">Digital license</p>
-                    <p className="mt-1 text-2xl font-black">$99</p>
-                  </div>
-                  <div className="text-right text-xs leading-5 text-white/75">
-                    Lifetime activation
-                    <br />
-                    Email delivery
-                  </div>
+                <div className="flex gap-2 text-xs font-bold text-slate-600">
+                  <span className="rounded-full bg-slate-100 px-3 py-2">Windows</span>
+                  <span className="rounded-full bg-violet-50 px-3 py-2 text-violet-700">Lifetime</span>
                 </div>
               </div>
             </div>
@@ -229,7 +221,27 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="how" className="border-y border-slate-200 bg-white">
+      <section className="border-y border-slate-200 bg-white">
+        <div className="mx-auto grid max-w-7xl gap-8 px-5 py-16 md:grid-cols-3 lg:px-8">
+          <div className="rounded-3xl bg-[#f5f9fd] p-7">
+            <p className="text-sm font-black text-[#00539b]">CREATE</p>
+            <h3 className="mt-2 text-2xl font-black tracking-tight">Create your own designs</h3>
+            <p className="mt-3 leading-7 text-slate-600">Build custom embroidery, lettering, stitches and reusable creative projects.</p>
+          </div>
+          <div className="rounded-3xl bg-[#fbf5fc] p-7">
+            <p className="text-sm font-black text-fuchsia-600">AUTOMATE</p>
+            <h3 className="mt-2 text-2xl font-black tracking-tight">Turn artwork into stitches</h3>
+            <p className="mt-3 leading-7 text-slate-600">PhotoStitch, Auto Punch and Cross Stitch tools help turn images into embroidery.</p>
+          </div>
+          <div className="rounded-3xl bg-[#f6f5ff] p-7">
+            <p className="text-sm font-black text-violet-700">WORK SMARTER</p>
+            <h3 className="mt-2 text-2xl font-black tracking-tight">Save time while creating</h3>
+            <p className="mt-3 leading-7 text-slate-600">Use built-in designs, fonts and intelligent color tools to speed up your workflow.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="how" className="border-b border-slate-200 bg-white">
         <div className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-28">
           <div className="flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
             <div>
@@ -237,7 +249,7 @@ export default function Home() {
               <h2 className="mt-3 text-4xl font-black tracking-[-0.04em] sm:text-5xl">{t.howTitle}</h2>
             </div>
             <p className="max-w-xl text-base leading-7 text-slate-600">
-              Purchase, receive your instructions, send your Hardware ID and get your activation by email.
+              A clear four-step process from secure checkout to your licensed activation.
             </p>
           </div>
 
@@ -262,7 +274,7 @@ export default function Home() {
               <p className="mt-5 max-w-xl text-lg leading-8 text-slate-300">{t.compatibilityText}</p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
-              {["Windows", "Digital delivery", "Email activation", "Lifetime license"].map((item) => (
+              {["Windows 10 / 11", "1 GHz+ processor", "1 GB+ memory", "600 MB+ free space"].map((item) => (
                 <div key={item} className="rounded-2xl border border-white/10 bg-white/5 p-5">
                   <div className="mb-4 h-2 w-12 rounded-full bg-gradient-to-r from-fuchsia-500 to-sky-400" />
                   <p className="font-bold">{item}</p>
