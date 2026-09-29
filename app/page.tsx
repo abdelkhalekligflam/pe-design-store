@@ -146,14 +146,23 @@ export default function Home() {
         </div>
       </header>
 
+      <nav className="border-b border-slate-200 bg-white px-5 py-3 lg:hidden">
+        <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto text-xs font-bold text-slate-600 [scrollbar-width:none]">
+          <a href="#features" className="whitespace-nowrap rounded-full bg-slate-100 px-4 py-2">{t.nav[0]}</a>
+          <a href="#how" className="whitespace-nowrap rounded-full bg-slate-100 px-4 py-2">{t.nav[1]}</a>
+          <a href="#compatibility" className="whitespace-nowrap rounded-full bg-slate-100 px-4 py-2">{t.nav[2]}</a>
+          <a href="#faq" className="whitespace-nowrap rounded-full bg-slate-100 px-4 py-2">{t.nav[3]}</a>
+        </div>
+      </nav>
+
       <section className="relative overflow-hidden">
         <div className="absolute inset-x-0 top-0 -z-10 h-[560px] bg-[radial-gradient(circle_at_20%_20%,rgba(217,70,239,0.15),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(14,165,233,0.14),transparent_32%),radial-gradient(circle_at_55%_65%,rgba(124,58,237,0.12),transparent_38%)]" />
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 lg:grid-cols-[1.02fr_.98fr] lg:px-8 lg:py-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-14 sm:py-20 lg:grid-cols-[1.02fr_.98fr] lg:px-8 lg:py-28">
           <div>
             <span className="inline-flex rounded-full border border-violet-200 bg-white/80 px-4 py-2 text-xs font-bold uppercase tracking-[0.18em] text-violet-700 shadow-sm">
               {t.badge}
             </span>
-            <h1 className="mt-7 max-w-3xl text-5xl font-black leading-[1.02] tracking-[-0.05em] text-slate-950 sm:text-6xl lg:text-7xl">
+            <h1 className="mt-7 max-w-3xl text-4xl font-black leading-[1.04] tracking-[-0.05em] text-slate-950 sm:text-6xl lg:text-7xl">
               {t.title}
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 sm:text-xl">
@@ -184,7 +193,7 @@ export default function Home() {
           <div className="relative">
             <div className="absolute -left-8 top-10 h-44 w-44 rounded-full bg-fuchsia-300/30 blur-3xl" />
             <div className="absolute -right-8 bottom-0 h-52 w-52 rounded-full bg-sky-300/30 blur-3xl" />
-            <div className="relative rounded-[2rem] border border-slate-200 bg-white p-6 shadow-2xl shadow-violet-200/50 sm:p-9">
+            <div className="relative rounded-[1.5rem] border border-slate-200 bg-white p-4 shadow-2xl sm:rounded-[2rem] sm:p-6 shadow-violet-200/50 sm:p-9">
               <div className="absolute right-5 top-5 z-10 rounded-full bg-[#00539b] px-3 py-1.5 text-xs font-bold text-white shadow-sm">
                 PE-DESIGN 11
               </div>
@@ -382,7 +391,7 @@ export default function Home() {
           <p>© 2026 PE-DESIGN Store</p>
           <p className="max-w-2xl sm:text-right"><span>{t.disclaimer}</span></p>
         </div>
-      <Link href="/policies" className="font-semibold text-slate-600 transition hover:text-violet-700">{lang === "en" ? "Terms · Privacy · Refunds" : "Conditions · Confidentialité · Remboursements"}</Link></footer>
+      <Link href="/policies" className="shrink-0 font-semibold text-slate-600 transition hover:text-violet-700">{lang === "en" ? "Terms · Privacy · Refunds" : "Conditions · Confidentialité · Remboursements"}</Link></footer>
     </main>
   );
 }
