@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { useSearchParams } from "next/navigation";
 
 const content = {
   en: {
@@ -26,9 +25,12 @@ const content = {
 } as const;
 
 export default function PoliciesPage(){
- const params=useSearchParams();
- const initialLang=params.get("lang")==="fr"?"fr":"en";
- const [lang,setLang]=useState<"en"|"fr">(initialLang); const t=content[lang];
+ const [lang,setLang]=useState<"en"|"fr">("en"); const t=content[lang];
+ useEffect(()=>{
+  const params=new URLSearchParams(window.location.search);
+  const nextLang=params.get("lang")==="fr"?"fr":"en";
+  setLang(nextLang);
+ },[]);
  useEffect(()=>{document.documentElement.lang=lang;},[lang]);
  return <main className="min-h-screen bg-[#f7f7fa] text-slate-950">
   <header className="border-b border-slate-200 bg-white"><div className="mx-auto flex max-w-5xl items-center justify-between px-5 py-5"><Link href={`/?lang=${lang}`} className="font-black">PE-DESIGN 11</Link><div className="flex rounded-full border border-slate-200 p-1 text-xs font-bold"><button onClick={()=>setLang("en")} className={`rounded-full px-3 py-1.5 ${lang==="en"?"bg-slate-950 text-white":""}`}>EN</button><button onClick={()=>setLang("fr")} className={`rounded-full px-3 py-1.5 ${lang==="fr"?"bg-slate-950 text-white":""}`}>FR</button></div></div></header>
